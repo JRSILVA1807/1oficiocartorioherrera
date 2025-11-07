@@ -1,0 +1,108 @@
+/* ======== ESTILO GERAL ======== */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f4fdf4; /* verde claro suave */
+  color: #1a1a1a;
+}
+
+/* ======== CONTAINER PRINCIPAL ======== */
+.estacionamento-container {
+  display: flex;
+  justify-content: center;   /* centraliza horizontalmente */
+  align-items: center; 
+ /*	min-height: 100vh;      /* centraliza verticalmente */
+  min-height: clamp(420px, 70vh, 780px); /* responsivo */
+ /* height: 100vh;             /* ocupa toda a tela */
+  text-align: center;
+  padding:  64px 16px 32px;/*espaçopro header*/
+  box-sizing: border-box;
+}
+
+/* ======== CONTEÚDO ======== */
+.estacionamento-conteudo {
+  display: flex;
+  flex-direction: column;   /* logo em cima, texto embaixo */
+  align-items: center;
+  justify-content: center;
+  max-width: 700px;
+}
+
+/* ======== LOGO ======== */
+.logo-estacionamento {
+ /* width: 220px;*/
+ width: clamp(140px, 22vw, 220px);
+  height: auto;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  object-fit: contain;
+  
+}
+
+/* ======== TEXTO ======== */
+.texto-estacionamento h2 {
+  font-size: 1.8rem;
+  color: #1a4d2e;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.texto-estacionamento p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 8px 0;
+}
+
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 768px) {
+  .estacionamento-container {
+    padding: 40px 10px;
+    height: auto; /* libera rolagem se for necessário */
+  }
+
+  .logo-estacionamento {
+    width: 160px;
+    margin-bottom: 20px;
+  }
+
+  .texto-estacionamento h2 {
+    font-size: 1.5rem;
+  }
+
+  .texto-estacionamento p {
+    font-size: 0.95rem;
+  }
+}
+/*Garantir que texto e imagem fiquem lado a lado em telas grandes:*/
+@media (min-width: 900px) {
+  .estacionamento-conteudo {
+    flex-direction: row;
+    text-align: left;
+    gap: 40px;
+  }
+}
+
+/* ======== PADRONIZAÇÃO ENTRE SEÇÕES ======== */
+.logo-aqui, .logo-estacionamento, .logo-pagamento {
+  width: clamp(140px, 22vw, 220px);
+  height: auto;
+}
+
+.aqui-conteudo, .estacionamento-conteudo, .pagamento-conteudo {
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  max-width: 700px;
+  text-align: left;
+  flex-wrap: wrap; /* garante ajuste suave no celular */
+}
+
+@media (max-width: 768px) {
+  .aqui-conteudo, .estacionamento-conteudo, .pagamento-conteudo {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+min-height: clamp(420px, 70vh, 780px);

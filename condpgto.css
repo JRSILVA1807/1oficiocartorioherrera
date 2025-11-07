@@ -1,0 +1,117 @@
+/* ======== ESTILO GERAL ======== */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f4fdf4;
+  color: #1a1a1a;
+}
+
+/* ======== CONTAINER PRINCIPAL ======== */
+.pagamento-container {
+  display: flex;
+  justify-content: center;  /* centraliza horizontalmente */
+  align-items: center;      /* centraliza verticalmente */
+ /* min-height:100vh;*/
+ /*height: 100vh;  /* ocupa toda a altura da tela */
+  min-height: clamp(420px, 70vh, 780px); /* responsivo */
+  text-align: center;       /* centraliza o texto */
+  box-sizing: border-box;
+  /*padding: 20px;*/
+ padding: 64px 16px 32px; /* espaço pro header sticky */
+}
+
+/* ======== BLOCO DE CONTEÚDO ======== */
+.pagamento-conteudo {
+  display: flex;
+  flex-direction: column;  /* imagem em cima, texto embaixo */
+  align-items: center;
+  justify-content: center;
+  max-width: 700px;
+  /*min-height:100vh;*/
+  flex-direction: row;
+  gap: 40px;
+  text-align: left;
+}
+
+/* ======== LOGO ======== */
+/* ======== LOGO ======== */
+.logo-pagamento {
+  width: clamp(140px, 22vw, 220px); /* mesmo padrão das outras */
+  height: auto;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  object-fit: contain;
+  padding: 0; /* remove o padding que aumentava a altura */
+}
+
+
+
+/*.logo-pagamento {
+  /*width: 200px;*/
+ /* padding: 64px 16px 32px; /* espaço pro header sticky */
+/*  height: auto;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  object-fit: contain;
+}*/
+
+/* ======== TEXTO ======== */
+.texto-pagamento h2 {
+  font-size: 1.8rem;
+  color: #1a4d2e;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.texto-pagamento p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 8px 0;
+}
+
+/* ======== RESPONSIVO (CELULAR/TABLET) ======== */
+@media (max-width: 768px) {
+  .pagamento-container {
+    padding: 40px 10px;
+    height: auto; /* libera rolagem se o conteúdo for maior */
+  }
+
+  .logo-pagamento {
+    width: 160px;
+    margin-bottom: 20px;
+  }
+
+  .texto-pagamento h2 {
+    font-size: 1.5rem;
+  }
+
+  .texto-pagamento p {
+    font-size: 0.95rem;
+  }
+}
+
+/* ======== PADRONIZAÇÃO ENTRE SEÇÕES ======== */
+.logo-aqui, .logo-estacionamento, .logo-pagamento {
+  width: clamp(140px, 22vw, 220px);
+  height: auto;
+}
+
+.aqui-conteudo, .estacionamento-conteudo, .pagamento-conteudo {
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  max-width: 700px;
+  text-align: left;
+  flex-wrap: wrap; /* garante ajuste suave no celular */
+}
+
+@media (max-width: 768px) {
+  .aqui-conteudo, .estacionamento-conteudo, .pagamento-conteudo {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+min-height: clamp(420px, 70vh, 780px);

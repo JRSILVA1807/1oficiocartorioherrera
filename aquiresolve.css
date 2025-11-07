@@ -1,0 +1,123 @@
+/* ======== ESTILO GERAL ======== */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f4fdf4; /* Verde claro suave */
+  color: #1a1a1a;
+}
+
+/* ======== CONTAINER PRINCIPAL ======== */
+.aqui-container {
+  display: flex;
+  justify-content: center;   /* centraliza horizontalmente */
+  align-items: center;       /* centraliza verticalmente */
+ /* height: 100vh;    /* ocupa toda a tela */
+ /* min-height:100vh;*/
+  min-height: clamp(420px, 70vh, 780px); /* responsivo */
+  text-align: center;
+   padding: 64px 16px 32px; /* espaço pro header sticky */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* ======== BLOCO DE CONTEÚDO ======== */
+.aqui-conteudo {
+  display: flex;
+  flex-direction: column;
+  flex-direction: row;   /* logo em cima, texto embaixo */
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  max-width: 700px;
+  text-align: left;
+  gap: 40px;
+}
+
+/* ======== LOGO ======== */
+.logo-aqui {
+  /*width: 220px;*/
+  width: clamp(140px, 22vw, 220px);
+  height: auto;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  object-fit: contain;
+}
+
+/* ======== TEXTO ======== */
+.texto-aqui h2 {
+  font-size: 1.8rem;
+  color: #1a4d2e;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.texto-aqui p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 8px 0;
+}
+
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 900px) {
+  .aqui-container {
+    padding: 40px 10px;
+    height: auto; /* libera rolagem se for necessário */
+  }
+
+  .logo-aqui {
+    width: 160px;
+    margin-bottom: 20px;
+  }
+
+  .texto-aqui h2 {
+    font-size: 1.5rem;
+  }
+
+  .texto-aqui p {
+    font-size: 0.95rem;
+  }
+}
+
+/*•	Layout zigue-zague (imagem à esquerda / texto à direita):*/
+/*@media (min-width: 900px) {
+  .aqui-conteudo {
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: left;
+  }
+}
+@media (min-width: 1200px) {
+  .aqui-conteudo:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+}*/
+ 	@media (min-width: 1200px) {
+   .aqui-conteudo:nth-child(even) {
+ flex-direction: row-reverse;
+ }
+
+/* ======== PADRONIZAÇÃO ENTRE SEÇÕES ======== */
+.logo-aqui, .logo-estacionamento, .logo-pagamento {
+  width: clamp(140px, 22vw, 220px);
+  height: auto;
+}
+
+.aqui-conteudo, .estacionamento-conteudo, .pagamento-conteudo {
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  max-width: 700px;
+  text-align: left;
+  flex-wrap: wrap; /* garante ajuste suave no celular */
+}
+
+@media (max-width: 768px) {
+  .aqui-conteudo, .estacionamento-conteudo, .pagamento-conteudo {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+min-height: clamp(420px, 70vh, 780px);
+
